@@ -55,12 +55,12 @@
     }
 
     .nav-logo {
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 900;
       letter-spacing: -0.02em;
       color: var(--text);
     }
-    .nav-logo span { color: var(--accent); }
+    .nav-logo span { color: #2563EB; }
 
     .nav-links {
       display: flex;
@@ -75,6 +75,15 @@
       transition: color 0.2s;
     }
     .nav-links a:not(.btn):hover { color: var(--text); }
+
+    .nav-links .btn-primary {
+      background: #2563EB;
+      border-color: #2563EB;
+    }
+    .nav-links .btn-primary:hover {
+      background: #1D4ED8;
+      border-color: #1D4ED8;
+    }
 
     /* ── BUTTONS ── */
     .btn {
@@ -416,6 +425,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transform: scale(1.1);
     }
 
     .about-content h2 {
@@ -952,12 +962,12 @@
     }
 
     .footer-logo {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 900;
       letter-spacing: -0.02em;
       color: var(--text);
     }
-    .footer-logo span { color: var(--accent); }
+    .footer-logo span { color: #2563EB; }
 
     .footer-links { display: flex; gap: 28px; }
 
@@ -1057,9 +1067,9 @@
     <nav>
       <div class="nav-logo">Anh <span>Phan</span></div>
       <div class="nav-links">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
+        <a href="https://www.instagram.com/mr_anhphan" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@mr_anhphan" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@mr_anhphan" target="_blank">YouTube</a>
         <a href="#phan-club" class="btn btn-primary">Join The Phan Club</a>
       </div>
     </nav>
@@ -1075,20 +1085,20 @@
       <h1>Hi, I'm Anh.<br><span style="white-space:nowrap">I help entrepreneurs</span><br><em>build businesses that work.</em></h1>
       <p>Multi-business solo operator and founder of The Phan Club — practical systems, real operations, and a community for people who are done winging it.</p>
       <div class="hero-ctas">
-        <a href="#phan-club" class="btn btn-primary btn-lg">Join The Phan Club</a>
-        <a href="#" class="btn btn-outline btn-lg">Watch on YouTube</a>
+        <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="btn btn-primary btn-lg">Join The Phan Club</a>
+        <a href="https://www.youtube.com/@mr_anhphan" target="_blank" class="btn btn-outline btn-lg">Watch on YouTube</a>
       </div>
       <div class="hero-social">
         <span>Find me on</span>
-        <a href="#" class="social-link">
+        <a href="https://www.instagram.com/mr_anhphan" target="_blank" class="social-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Instagram
         </a>
-        <a href="#" class="social-link">
+        <a href="https://www.tiktok.com/@mr_anhphan" target="_blank" class="social-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.95a8.16 8.16 0 0 0 4.77 1.52V7.02a4.85 4.85 0 0 1-1-.33z"/></svg>
           TikTok
         </a>
-        <a href="#" class="social-link">
+        <a href="https://www.youtube.com/@mr_anhphan" target="_blank" class="social-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           YouTube
         </a>
@@ -1106,8 +1116,9 @@
           <p class="section-body">I document the real stuff — building businesses, running operations, being a queer entrepreneur. No fluff, no paywall. Follow along wherever you are.</p>
         </div>
         <div style="display:flex; gap:12px; flex-shrink:0; flex-wrap:wrap; align-items:center;">
-          <a href="#" class="btn btn-outline">Subscribe on YouTube</a>
-          <a href="#" class="btn btn-outline">Follow on TikTok</a>
+          <a href="https://www.youtube.com/@mr_anhphan" target="_blank" class="btn btn-outline">Subscribe on YouTube</a>
+          <a href="https://www.tiktok.com/@mr_anhphan" target="_blank" class="btn btn-outline">Follow on TikTok</a>
+          <a href="https://www.instagram.com/mr_anhphan" target="_blank" class="btn btn-outline">Follow on Instagram</a>
         </div>
       </div>
       <div class="content-grid">
@@ -1177,7 +1188,7 @@
           <p>We're queer-led and values-forward. The majority of us are queer — but if you're a genuine ally who shares these values, you belong here too.</p>
           <p>We're in founding member mode right now — seats are limited, the rate locks in forever, and you'll be shaping what this community becomes.</p>
           <div class="ctas">
-            <a href="#" class="btn btn-primary btn-lg">Join as a Founding Member</a>
+            <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="btn btn-primary btn-lg">Join as a Founding Member</a>
             <a href="#about" class="btn btn-outline btn-lg">Learn About Anh</a>
           </div>
         </div>
@@ -1228,7 +1239,7 @@
           <div class="stat-label">Years building communities</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">200+</div>
+          <div class="stat-num">300+</div>
           <div class="stat-label">Players in MN Dodgeball</div>
         </div>
         <div class="stat-item">
@@ -1246,7 +1257,7 @@
         <div class="about-photo-wrap">
           <div class="about-photo">
             <!-- Replace with: <img src="your-photo.jpg" alt="Anh Phan"> -->
-            <span style="font-size:13px; font-weight:600; color: var(--text-light);">Your photo here</span>
+            <img src="images/happyanh.jpg" alt="Anh Phan">
           </div>
         </div>
         <div class="about-content">
@@ -1254,7 +1265,7 @@
           <h2>Real operator.<br>Not a guru.</h2>
           <p>I was born in Saigon and immigrated to Massachusetts at age 3. Growing up as the kid of Vietnamese immigrants in Worcester, I learned early that belonging isn't something that just happens — it's something you build, intentionally, for the people who don't already have it.</p>
           <p>That shaped everything. The immigrant experience, the queer identity layered on top of all of it — none of it came with a ready-made community. You find your people, or you create the space where they can find each other. That's been the throughline of everything I've built.</p>
-          <p>I run Minnesota Dodgeball (leagues, tournaments, 200+ players), Always Funday (events and experiences), and Phan Ventures — all as a solo operator, while working a full-time day job. The only reason any of it works is systems: workflows, AI tools, and operational infrastructure that let me run multiple businesses without a team. That's what I teach.</p>
+          <p>I run Minnesota Dodgeball (leagues, tournaments, 300+ players), Always Funday (events and experiences), and Phan Ventures — all as a solo operator, while working a full-time day job. The only reason any of it works is systems: workflows, AI tools, and operational infrastructure that let me run multiple businesses without a team. That's what I teach.</p>
           <p>The Phan Club is where it all comes together — the business building frameworks, the operational systems, and the honest reality of being a queer Vietnamese-American entrepreneur who's still very much in it.</p>
         </div>
       </div>
@@ -1367,7 +1378,7 @@
           <li>In-person experiences &amp; trips</li>
           <li>Founding rate locked in forever</li>
         </ul>
-        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Join as a Founding Member</a>
+        <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Join as a Founding Member</a>
       </div>
 
       <p class="pricing-note">Not ready to commit? <a href="#cohort">Apply for the cohort</a> first — graduates get a free year of membership included.</p>
@@ -1404,8 +1415,8 @@
       <h2>You belong here.<br>Come build with us.</h2>
       <p>Founding member spots are open. Join a community of queer entrepreneurs and allies who are done doing this alone.</p>
       <div class="join-ctas">
-        <a href="#" class="btn btn-white btn-lg">Join as a Founding Member</a>
-        <a href="#" class="btn btn-outline-white btn-lg">Watch on YouTube</a>
+        <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="btn btn-white btn-lg">Join as a Founding Member</a>
+        <a href="https://www.youtube.com/@mr_anhphan" target="_blank" class="btn btn-outline-white btn-lg">Watch on YouTube</a>
       </div>
     </div>
   </section>
@@ -1415,9 +1426,9 @@
     <div class="footer-inner">
       <div class="footer-logo">Anh <span>Phan</span></div>
       <div class="footer-links">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
+        <a href="https://www.instagram.com/mr_anhphan" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@mr_anhphan" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@mr_anhphan" target="_blank">YouTube</a>
         <a href="#phan-club">The Phan Club</a>
       </div>
       <div class="footer-copy">&copy; 2026 Anh Phan / Phan Ventures LLC</div>
