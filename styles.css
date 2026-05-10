@@ -58,7 +58,7 @@ nav {
 body { padding-top: 70px; }
 
 .nav-logo { font-size: 18px; font-weight: 900; letter-spacing: -0.025em; }
-.nav-logo-accent { color: #1D4ED8; }
+.nav-logo-accent { color: var(--accent); }
 
 .nav-links {
   display: flex;
@@ -81,7 +81,7 @@ body { padding-top: 70px; }
   font-size: 13px;
   font-weight: 700;
   color: #fff;
-  background: #1D4ED8;
+  background: var(--accent);
   padding: 7px 16px;
   border-radius: 6px;
   transition: opacity 0.2s;
