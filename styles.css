@@ -63,7 +63,7 @@ body { padding-top: 70px; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 }
 
 .nav-link {
@@ -92,21 +92,28 @@ body { padding-top: 70px; }
 
 /* ── HERO (HOMEPAGE) ── */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 460px;
-  min-height: 540px;
+  padding: 80px 48px 88px;
   border-bottom: 1px solid var(--border);
   background: var(--bg);
+  text-align: center;
 }
 
 .hero-text {
-  padding: 72px 40px 72px 48px;
+  max-width: 680px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
-.hero-photo { overflow: hidden; }
+.hero-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 36px;
+  border: 3px solid var(--border);
+}
 
 .hero-photo img {
   width: 100%;
@@ -144,7 +151,6 @@ body { padding-top: 70px; }
   color: var(--text-muted);
   line-height: 1.75;
   margin-bottom: 36px;
-  max-width: 520px;
 }
 
 .hero-cta {
@@ -266,7 +272,7 @@ body { padding-top: 70px; }
 
 .preview-inner { max-width: 1000px; margin: 0 auto; }
 
-.preview-header { margin-bottom: 40px; }
+.preview-header { margin-bottom: 40px; text-align: center; }
 
 .preview-header h2 {
   font-size: clamp(24px, 2.8vw, 34px);
@@ -438,9 +444,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 48px; }
   .story-stats { grid-template-columns: 1fr 1fr; }
   .story-stat { border-right: none; border-bottom: 1px solid var(--border); }
 
-  .hero { grid-template-columns: 1fr; min-height: unset; }
-  .hero-photo { height: 360px; order: -1; }
-  .hero-text { padding: 52px 32px; }
+  .hero { padding: 60px 32px 68px; }
   .story-micro { padding: 40px 32px; }
   .lead-section { padding: 60px 24px; }
   .preview-section { padding: 60px 24px; }
@@ -461,8 +465,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 48px; }
   .story-stats { grid-template-columns: 1fr 1fr; }
   .story-stat { padding: 32px 20px; }
 
-  .hero-photo { height: 260px; }
-  .hero-text { padding: 40px 20px; }
+  .hero { padding: 52px 20px 60px; }
   .hero-belief { font-size: 26px; }
   .story-micro { padding: 32px 20px; }
   .lead-section { padding: 52px 20px; }
