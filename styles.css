@@ -88,6 +88,8 @@ body { padding-top: 70px; }
 }
 .nav-login:hover { opacity: 0.88; }
 
+.nav-cta-wrapper { display: flex; align-items: center; gap: 12px; }
+
 /* ── HERO ── */
 .hero {
   display: block;
