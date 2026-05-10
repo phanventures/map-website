@@ -3,773 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anh Phan — Let's Build Together</title>
-  <meta name="description" content="Community builder and entrepreneur. Founder of The Phan Club — a community for ambitious people who get things done, lift each other up, and build the life they want together.">
+  <title>Anh Phan — Build Systems. Get Things Done. Find Your People.</title>
+  <meta name="description" content="Anh Phan helps queer entrepreneurs and their allies build the systems, workflows, and habits to actually get things done — without burning out. Join The Phan Club.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400;1,14..32,700;1,14..32,800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --bg: #F8F7F3;
-      --text: #111110;
-      --text-muted: #6B6860;
-      --text-light: #9C9890;
-      --accent: #E04E1F;
-      --border: #E4E1D8;
-      --pride-gradient: linear-gradient(
-        to right,
-        #FF0018 0%,    #FF0018 12.5%,
-        #FF8C00 12.5%, #FF8C00 25%,
-        #FFD700 25%,   #FFD700 37.5%,
-        #008026 37.5%, #008026 50%,
-        #004DFF 50%,   #004DFF 62.5%,
-        #750787 62.5%, #750787 75%,
-        #55CDFC 75%,   #55CDFC 87.5%,
-        #F7A8B8 87.5%, #F7A8B8 100%
-      );
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    /* ── PRIDE STRIPE ── */
-    .pride-stripe { height: 5px; background: var(--pride-gradient); }
-
-    /* ── SITE HEADER (fixed wrapper for both stripes + nav) ── */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: var(--bg);
-    }
-
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 60px;
-      background: var(--bg);
-    }
-
-    /* offset body content so it clears the fixed header (5 + 60 + 5 = 70px) */
-    body { padding-top: 70px; }
-
-    .nav-logo { font-size: 18px; font-weight: 900; letter-spacing: -0.025em; }
-    .nav-logo-accent { color: #1D4ED8; }
-
-    .nav-socials { display: flex; align-items: center; gap: 20px; }
-
-    .nav-social-link {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-    .nav-social-link:hover { color: var(--text); }
-    .nav-social-link svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-    .nav-divider { width: 1px; height: 20px; background: var(--border); }
-
-    .nav-login {
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      background: #1D4ED8;
-      padding: 7px 16px;
-      border-radius: 6px;
-      transition: opacity 0.2s;
-    }
-    .nav-login:hover { opacity: 0.88; }
-
-    /* ── HERO ── */
-    .hero {
-      display: block;
-      position: relative;
-      background: linear-gradient(
-        150deg,
-        #6D28D9  0%,
-        #1D4ED8  22%,
-        #0891B2  44%,
-        #059669  66%,
-        #D97706  88%,
-        #DC2626  100%
-      );
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.22);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero-text {
-      padding: 80px 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-eyebrow {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 28px;
-    }
-
-    .hero-belief {
-      font-size: clamp(28px, 3.8vw, 46px);
-      font-weight: 900;
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-      margin-bottom: 28px;
-      color: #FCD34D;
-    }
-
-    .hero-belief em {
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.7);
-      white-space: nowrap;
-    }
-
-    .hero-sub {
-      font-size: 17px;
-      color: #fff;
-      line-height: 1.75;
-      margin-bottom: 40px;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      background: #fff;
-      color: #111110;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 800;
-      padding: 14px 28px;
-      border-radius: 8px;
-      transition: opacity 0.2s;
-      width: fit-content;
-    }
-    .hero-cta:hover { opacity: 0.9; }
-
-
-    /* ── STORY ── */
-    .story-section {
-      display: grid;
-      grid-template-columns: 1fr 480px;
-      border-top: 1px solid var(--border);
-    }
-
-    .story-text {
-      padding: 60px 56px 60px 56px;
-      border-right: 1px solid var(--border);
-    }
-
-    .story-photo {
-      overflow: hidden;
-    }
-
-    .story-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    /* ── STORY STATS STRIP ── */
-    .story-stats {
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .story-stat {
-      padding: 48px 40px;
-      border-right: 1px solid var(--border);
-    }
-
-    .story-stat:last-child { border-right: none; }
-
-    .section-label {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 28px;
-      display: block;
-    }
-
-    .story-text h2 {
-      font-size: clamp(26px, 3vw, 36px);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-
-    .story-text p {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 12px;
-    }
-
-    .story-text p:last-of-type { margin-bottom: 0; }
-    .story-text em { font-style: italic; color: var(--text); }
-
-    .story-facts {
-      padding: 80px 56px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .fact-item { display: flex; flex-direction: column; gap: 4px; }
-
-    .fact-num {
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      line-height: 1;
-      color: var(--text);
-    }
-
-    .fact-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-      line-height: 1.4;
-      max-width: 200px;
-    }
-
-    .fact-divider { height: 1px; background: var(--border); }
-
-    /* ── YOUTUBE / CONTENT ── */
-    .content-section {
-      border-top: 1px solid var(--border);
-      padding: 80px 48px;
-      background: var(--bg);
-    }
-
-    .content-inner { max-width: 1100px; margin: 0 auto; }
-
-    .content-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-bottom: 40px;
-    }
-
-    .content-header h2 {
-      font-size: clamp(24px, 3vw, 34px);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-
-    .content-header .header-sub {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 420px;
-    }
-
-    .subscribe-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--accent);
-      white-space: nowrap;
-      flex-shrink: 0;
-      border-bottom: 1px solid rgba(224, 78, 31, 0.3);
-      padding-bottom: 2px;
-      transition: opacity 0.2s;
-    }
-    .subscribe-link:hover { opacity: 0.75; }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .video-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-      transition: box-shadow 0.2s, transform 0.2s;
-      cursor: pointer;
-    }
-
-    .video-card:hover {
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .video-thumb {
-      aspect-ratio: 16 / 9;
-      background: #E4E1D8;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .video-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .video-thumb .thumb-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-light);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .play-btn {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .play-circle {
-      width: 44px;
-      height: 44px;
-      background: rgba(0, 0, 0, 0.55);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .video-card:hover .play-circle {
-      background: var(--accent);
-      transform: scale(1.08);
-    }
-
-    .play-circle svg { width: 16px; height: 16px; fill: #fff; margin-left: 2px; }
-
-    .video-info { padding: 18px 20px 20px; }
-
-    .video-info h4 {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.45;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-
-    .video-info span {
-      font-size: 12px;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    /* ── PHAN CLUB INVITATION ── */
-    .phan-club-section {
-      background: linear-gradient(
-        150deg,
-        #6D28D9  0%,
-        #1D4ED8  22%,
-        #0891B2  44%,
-        #059669  66%,
-        #D97706  88%,
-        #DC2626  100%
-      );
-      position: relative;
-      padding: 100px 64px;
-    }
-
-    .phan-club-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.38);
-      pointer-events: none;
-    }
-
-    .phan-club-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 460px;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .phan-club-section .section-label { color: rgba(255, 255, 255, 0.55); }
-
-    .phan-club-heading {
-      font-size: clamp(28px, 3.8vw, 48px);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: #fff;
-      margin-bottom: 32px;
-    }
-
-    .phan-club-heading em { font-style: italic; color: rgba(255, 255, 255, 0.7); }
-
-    .phan-club-body {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .phan-club-body p {
-      font-size: 17px;
-      color: rgba(255, 255, 255, 0.68);
-      line-height: 1.8;
-    }
-
-    .phan-club-body strong { color: rgba(255, 255, 255, 0.92); font-weight: 600; }
-
-    .phan-club-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-
-    .phan-club-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 16px;
-      padding: 48px 44px;
-      backdrop-filter: blur(4px);
-      transform: translateY(48px);
-    }
-
-    .phan-club-card-heading {
-      font-size: 18px;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 28px;
-      letter-spacing: -0.02em;
-    }
-
-    .phan-club-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .phan-club-features li {
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .phan-club-features strong {
-      font-size: 14px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.9);
-      letter-spacing: -0.01em;
-    }
-
-    .phan-club-features span {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.48);
-      line-height: 1.5;
-    }
-
-    .btn-white {
-      display: inline-flex;
-      align-items: center;
-      background: #fff;
-      color: #111110;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 800;
-      padding: 14px 28px;
-      border-radius: 8px;
-      transition: opacity 0.2s;
-    }
-    .btn-white:hover { opacity: 0.92; }
-
-    .founding-note { font-size: 13px; color: rgba(255, 255, 255, 0.38); font-weight: 500; }
-
-    /* ── COHORT ── */
-    .cohort-section {
-      padding: 100px 48px;
-      position: relative;
-      background: linear-gradient(
-        150deg,
-        #6D28D9  0%,
-        #1D4ED8  22%,
-        #0891B2  44%,
-        #059669  66%,
-        #D97706  88%,
-        #DC2626  100%
-      );
-    }
-
-    .cohort-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.38);
-      pointer-events: none;
-    }
-
-    .cohort-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cohort-section .section-label { color: rgba(255, 255, 255, 0.55); }
-
-    .cohort-heading {
-      font-size: clamp(28px, 3.8vw, 48px);
-      font-weight: 900;
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-      margin-bottom: 28px;
-      color: #FCD34D;
-    }
-
-    .cohort-heading em {
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .cohort-sub {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.85;
-      margin-bottom: 16px;
-      max-width: 480px;
-    }
-
-    .cohort-grad-note {
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.55);
-      margin-bottom: 36px;
-    }
-
-    .cohort-stats {
-      display: flex;
-      gap: 32px;
-      margin-bottom: 36px;
-    }
-
-    .cohort-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .cohort-stat-num {
-      font-size: 36px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: #fff;
-    }
-
-    .cohort-stat-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .cohort-apply {
-      display: inline-flex;
-      align-items: center;
-      background: #fff;
-      color: #111110;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 800;
-      padding: 14px 28px;
-      border-radius: 8px;
-      transition: opacity 0.2s;
-    }
-    .cohort-apply:hover { opacity: 0.9; }
-
-    .cohort-modules {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .cohort-module {
-      display: flex;
-      gap: 24px;
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      align-items: flex-start;
-    }
-
-    .module-num {
-      font-size: 11px;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.35);
-      letter-spacing: 0.08em;
-      min-width: 24px;
-      padding-top: 3px;
-    }
-
-    .module-body strong {
-      display: block;
-      font-size: 16px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
-    }
-
-    .module-body span {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.65;
-    }
-
-    /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 32px 48px; }
-
-    .footer-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-logo { font-size: 18px; font-weight: 900; letter-spacing: -0.025em; }
-
-    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
-
-    .footer-links a {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--text); }
-    .footer-links svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-    .footer-copy { font-size: 12px; color: var(--text-light); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1080px) {
-      .story-section { grid-template-columns: 1fr 380px; }
-    }
-
-    @media (max-width: 960px) {
-      .hero-text { padding: 60px 32px; }
-
-      .story-section { grid-template-columns: 1fr; }
-      .story-text { padding: 60px 32px; border-right: none; border-bottom: 1px solid var(--border); }
-      .story-photo { height: 420px; order: -1; }
-      .story-stats { grid-template-columns: 1fr 1fr; }
-      .story-stat { border-right: none; border-bottom: 1px solid var(--border); }
-
-      .content-section { padding: 60px 24px; }
-      .content-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .video-grid { grid-template-columns: 1fr 1fr; }
-
-      .phan-club-section { padding: 72px 32px; }
-      .phan-club-inner { grid-template-columns: 1fr; gap: 40px; }
-      .cohort-section { padding: 72px 32px; }
-      .cohort-inner { grid-template-columns: 1fr; gap: 52px; }
-      .cohort-header { order: -1; }
-      .cohort-stats { justify-content: center; }
-      nav { padding: 0 24px; }
-      footer { padding: 28px 24px; }
-    }
-
-    @media (max-width: 640px) {
-      nav { padding: 0 20px; }
-      .nav-social-link span { display: none; }
-      .nav-socials { gap: 16px; }
-
-      .hero-eyebrow { font-size: 8px; letter-spacing: 0.06em; }
-      .hero-belief { font-size: 22px; }
-      .hero-text { padding: 48px 20px; }
-      .story-stats { grid-template-columns: 1fr 1fr; }
-      .story-stat { padding: 32px 20px; }
-
-      .story-text { padding: 52px 20px; }
-      .story-facts { padding: 40px 20px; }
-
-      .content-section { padding: 52px 20px; }
-      .video-grid { grid-template-columns: 1fr; }
-
-      .phan-club-section { padding: 60px 20px; }
-      footer { padding: 28px 20px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .footer-social-label { display: none; }
-      .footer-links { gap: 16px; }
-    }
-
-    @media (max-width: 400px) {
-      .hero-eyebrow { font-size: 7px; letter-spacing: 0.05em; }
-      .hero-belief { font-size: 17px; }
-      .fact-num { font-size: 36px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -793,7 +32,7 @@
         <span>YouTube</span>
       </a>
       <div class="nav-divider"></div>
-      <a href="https://community.mranhphan.com" target="_blank" class="nav-login">Log in</a>
+      <a href="https://community.mranhphan.com" target="_blank" class="nav-login">Join The Phan Club</a>
     </div>
   </nav>
   <div class="pride-stripe"></div>
@@ -802,10 +41,10 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-eyebrow">Queer Entrepreneur &nbsp;·&nbsp; Vietnamese-American &nbsp;·&nbsp; Community Builder</div>
-      <h1 class="hero-belief">We're all building toward something.<br><em>Let's not do it alone.</em></h1>
-      <p class="hero-sub">I'm Anh Phan. I've spent 15 years watching what happens when the right people find each other. Now I'm building a community for queer entrepreneurs and their allies — people who want to grow their businesses, show up for each other, and chase their dreams together.</p>
-      <a href="#phan-club" class="hero-cta">Join the Phan Club →</a>
+      <div class="hero-eyebrow">Queer Entrepreneur &nbsp;·&nbsp; Productivity Obsessive &nbsp;·&nbsp; Community Builder</div>
+      <h1 class="hero-belief">Build systems that work.<br><em>Get things done together.</em></h1>
+      <p class="hero-sub">I'm Anh Phan. I run 3 businesses alongside a full-time job — not by working more hours, but by building systems that actually work. I teach those systems to queer entrepreneurs and their allies who are ready to stop spinning and start building with intention.</p>
+      <a href="#offerings" class="hero-cta">See how it works →</a>
     </div>
   </div>
 
@@ -813,10 +52,10 @@
   <div class="story-section">
     <div class="story-text">
       <span class="section-label">The Story</span>
-      <h2>You go further when you're not going at it alone.</h2>
+      <h2>Ambition alone isn't enough. You need the right systems and the right people.</h2>
       <p>My parents came to America from Vietnam with no English, no safety net, and no guarantee it would work out. They were chasing the American dream from scratch, and they made it happen. That work ethic was in the air I grew up breathing. You don't wait for permission. You go after what you want. And when you fall down — and you will — you pick yourself back up and keep moving.</p>
-      <p>What I learned later is that ambition alone isn't enough. Most people with big dreams get stopped by fear. What changes everything is being around the right people: people who are fearless, who take risks, who show you by example that it's actually possible. People who are genuinely cheering for you. That kind of community doesn't just make the journey less lonely. <em>It makes you believe it can happen.</em></p>
-      <p>I want everyone in my communities to feel like they belong and have a real place at the table. Like their ideas are worth something. Like there is always space for them, regardless of who does or doesn't approve. At the end of the day, I want people to feel that their life is worth living. That's the core of why I build communities: to help people find their people.</p>
+      <p>What I learned later is that drive alone doesn't get you there. Most people with big dreams get stopped by chaos — too many ideas, no clear system, burning out before anything gains traction. What changes everything is building the right workflows, and being around the right people: people who are fearless, who take risks, who show you by example that it's actually possible.</p>
+      <p>What changed everything for me wasn't just ambition — it was building systems that could carry that ambition forward. Once I stopped winging it and started operating with real workflows, I could run businesses, show up for community, and actually make progress toward the things that mattered. <em>That's what I want to help you build.</em></p>
     </div>
     <div class="story-photo">
       <img src="images/2.jpg" alt="Anh Phan">
@@ -843,18 +82,162 @@
     </div>
   </div>
 
-  <!-- THE PHAN CLUB INVITATION -->
+  <!-- THREE OFFERINGS -->
+  <div class="offerings-section" id="offerings">
+    <div class="offerings-inner">
+      <div class="offerings-header">
+        <span class="section-label">How We Work Together</span>
+        <h2>Three ways to build with me.</h2>
+      </div>
+      <div class="offerings-grid">
+
+        <div class="offering-card">
+          <span class="offering-num">01</span>
+          <h3>The Cohort Program</h3>
+          <p>Six weeks. Small group. Real accountability. A structured program for queer entrepreneurs and their allies who are ready to stop spinning and start building — with frameworks, live sessions, and a cohort of people doing the same thing alongside you.</p>
+          <a href="#cohort" class="offering-link">Apply to a cohort →</a>
+        </div>
+
+        <div class="offering-card">
+          <span class="offering-num">02</span>
+          <h3>The Productivity System</h3>
+          <p>The exact tools, workflows, and weekly rhythms I use to run 3 businesses while working a full-time job. Get the free guide — a practical walkthrough of the system so you can see what's possible and start building your own version.</p>
+          <a href="#system" class="offering-link">Get the free guide →</a>
+        </div>
+
+        <div class="offering-card">
+          <span class="offering-num">03</span>
+          <h3>The Phan Club</h3>
+          <p>The ongoing community for queer entrepreneurs and their allies who want to keep building. Accountability, connection, shared wins, real talk — and a space where you actually belong, regardless of who else does or doesn't approve.</p>
+          <a href="#phan-club" class="offering-link">Join the community →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTIVITY SYSTEM -->
+  <div class="system-section" id="system">
+    <div class="system-inner">
+
+      <div class="system-header">
+        <span class="section-label">The System</span>
+        <h2>The exact framework I use to run 3 businesses.</h2>
+        <p class="system-sub">I run Minnesota Dodgeball, Always Funday, and Phan Ventures — alongside a full-time job. This is the system that makes it possible. Not complicated. Not perfect. Built to actually work.</p>
+        <div class="system-lead-box">
+          <p>Get the free guide — the full system, broken down step by step.</p>
+          <!-- Wire up to ConvertKit / Mailchimp / Beehiiv form action -->
+          <form class="system-lead-form" action="#" method="post">
+            <input type="email" name="email" placeholder="your@email.com" required>
+            <button type="submit">Get the guide</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="system-steps">
+        <div class="system-step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <strong>Capture Everything</strong>
+            <span>One inbox — nothing lives in your head. Every task goes into ClickUp, every thought goes into Obsidian. When you have one place to put things, you stop losing them.</span>
+          </div>
+        </div>
+        <div class="system-step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <strong>Weekly Planning Ritual</strong>
+            <span>Every Sunday, I plan the week. Thirty minutes that determines what actually gets done versus what gets endlessly pushed. This single habit changed more than any tool ever did.</span>
+          </div>
+        </div>
+        <div class="system-step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <strong>Project-Based Thinking</strong>
+            <span>Everything belongs to a project. No floating tasks, no random lists. When every piece of work has a home, nothing gets lost and priorities become obvious.</span>
+          </div>
+        </div>
+        <div class="system-step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <strong>AI-Assisted Execution</strong>
+            <span>I use AI to handle repetitive thinking — drafts, planning, research, automations. This frees me to do the work only I can do. Leverage the tools, protect your energy.</span>
+          </div>
+        </div>
+        <div class="system-step">
+          <span class="step-num">05</span>
+          <div class="step-body">
+            <strong>Regular Review</strong>
+            <span>Monthly, I review what's working and what isn't. Systems drift if you don't maintain them. The review is what keeps it honest — and keeps you from sliding back into chaos.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COHORT PROGRAM -->
+  <div class="cohort-section" id="cohort">
+    <div class="cohort-inner">
+
+      <div class="cohort-modules">
+        <div class="cohort-module">
+          <span class="module-num">01</span>
+          <div class="module-body">
+            <strong>Audit Your Current Reality</strong>
+            <span>Where is your time and energy actually going? Before you build new systems, you have to see clearly what's running (and draining) you right now.</span>
+          </div>
+        </div>
+        <div class="cohort-module">
+          <span class="module-num">02</span>
+          <div class="module-body">
+            <strong>Design Your System</strong>
+            <span>Tools, workflows, and rhythms — built for how you actually operate. Not a template you force yourself into. A system that fits your life and your goals.</span>
+          </div>
+        </div>
+        <div class="cohort-module">
+          <span class="module-num">03</span>
+          <div class="module-body">
+            <strong>Operations for Solo Operators</strong>
+            <span>Running a business without a team. The infrastructure that keeps you moving — without burning out or dropping everything the moment life gets full.</span>
+          </div>
+        </div>
+        <div class="cohort-module">
+          <span class="module-num">04</span>
+          <div class="module-body">
+            <strong>Accountability &amp; Peer Learning</strong>
+            <span>Weekly group sessions, real feedback, and a cohort of queer entrepreneurs and allies who are building at the same time as you. You're not doing this alone.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cohort-header">
+        <span class="section-label">The Cohort Program</span>
+        <h2 class="cohort-heading">6 weeks. Small group.<br><em>Real systems.</em></h2>
+        <p class="cohort-sub">The cohort is for queer entrepreneurs and their allies who are ready to stop spinning and start building with intention. In six weeks, you'll establish the systems that let you run a business — or grow one — without burning out.</p>
+        <p class="cohort-sub">You'll work alongside 10–15 other people who get it, because they're living it too. Direct access to me, live sessions, real feedback on your actual situation.</p>
+        <div class="cohort-stats">
+          <div class="cohort-stat"><span class="cohort-stat-num">6</span><span class="cohort-stat-label">Weeks</span></div>
+          <div class="cohort-stat"><span class="cohort-stat-num">10–15</span><span class="cohort-stat-label">Entrepreneurs</span></div>
+          <div class="cohort-stat"><span class="cohort-stat-num">Live</span><span class="cohort-stat-label">Sessions</span></div>
+        </div>
+        <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="cohort-apply">Apply to a Cohort →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THE PHAN CLUB -->
   <div class="phan-club-section" id="phan-club">
     <div class="phan-club-inner">
 
       <div class="phan-club-left">
         <span class="section-label">The Phan Club</span>
-        <h2 class="phan-club-heading">A community for queer entrepreneurs — <em>and the people who show up for them.</em></h2>
+        <h2 class="phan-club-heading">The ongoing home for queer entrepreneurs and their allies — <em>who want to keep building.</em></h2>
         <div class="phan-club-body">
-          <p>The Phan Club is a space for queer entrepreneurs and their allies to share wins, support each other, and build real connections. This isn't just an online community — we're working toward in-person retreats, visits, and shared experiences so we can grow and learn together in ways that actually stick.</p>
-          <p><strong>Everything here is built around uplifting each other.</strong> Whether you're celebrating a milestone, navigating a hard decision, or just looking for people who get it — this is the place.</p>
-          <p>We're queer-led and values-forward. The majority of us are queer, but if you're a genuine ally who shows up for this community, you belong here too.</p>
-          <p>Right now, we're in founding member mode — building the first core group of people who will shape what this becomes. Founding members get grandfathered into a special rate and locked in for the long haul. We want people who are here to stay.</p>
+          <p>The Phan Club is where you stay after the cohort — or where you start if you're not ready for the intensive yet. It's a community for queer entrepreneurs and their allies who want real connection, real accountability, and people who actually show up for each other.</p>
+          <p><strong>This isn't a passive membership.</strong> It's a space where people share wins, navigate hard decisions together, and build real friendships across industries and stages. We're working toward in-person retreats and experiences too — because the best conversations happen in the same room.</p>
+          <p>Queer-led and values-forward. The majority of us are queer, but genuine allies who show up for this community belong here too.</p>
+          <p>We're in founding member mode — building the first core group who will shape what this becomes. Founding members lock in a special rate for the long haul.</p>
         </div>
         <div class="phan-club-cta">
           <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="btn-white">Join The Phan Club →</a>
@@ -863,27 +246,27 @@
       </div>
 
       <div class="phan-club-card">
-        <p class="phan-club-card-heading">You don't have to build a business alone.</p>
+        <p class="phan-club-card-heading">You don't have to build alone.</p>
         <ul class="phan-club-features">
           <li>
             <strong>Queer entrepreneurs &amp; their allies</strong>
-            <span>All stages, all industries</span>
+            <span>All stages, all industries — real people building real things</span>
           </li>
           <li>
-            <strong>Real frameworks &amp; systems</strong>
-            <span>From someone who actually runs businesses</span>
+            <strong>Accountability &amp; community</strong>
+            <span>Show up, share progress, get honest feedback</span>
           </li>
           <li>
-            <strong>Cohort programs</strong>
-            <span>Small groups, deep accountability</span>
+            <strong>Systems &amp; productivity resources</strong>
+            <span>Tools, frameworks, and walkthroughs that actually translate to results</span>
+          </li>
+          <li>
+            <strong>Cohort program access</strong>
+            <span>Members get priority access and founding-member pricing</span>
           </li>
           <li>
             <strong>In-person experiences &amp; trips</strong>
             <span>Because community happens IRL too</span>
-          </li>
-          <li>
-            <strong>Queer-led &amp; values-forward</strong>
-            <span>Allies who genuinely show up are welcome</span>
           </li>
         </ul>
       </div>
@@ -904,8 +287,8 @@
       <div class="content-header">
         <div>
           <span class="section-label">On YouTube</span>
-          <h2>Watch. Learn. Get inspired.</h2>
-          <p class="header-sub">I document the real stuff — building businesses, finding community, and what it actually looks like to chase your goals in real life.</p>
+          <h2>Watch. Learn. Get moving.</h2>
+          <p class="header-sub">The real stuff — how I run businesses, build systems, and what it actually looks like to chase your goals without losing yourself in the process.</p>
         </div>
         <a href="https://www.youtube.com/@mr_anhphan" target="_blank" class="subscribe-link">Subscribe on YouTube ↗</a>
       </div>
@@ -923,7 +306,7 @@
               </div>
             </div>
             <div class="video-info">
-              <h4>How I Built a 300-Person Dodgeball Community From Zero</h4>
+              <h4>The Productivity System I Use to Run 3 Businesses</h4>
               <span>Coming soon on YouTube</span>
             </div>
           </div>
@@ -941,7 +324,7 @@
               </div>
             </div>
             <div class="video-info">
-              <h4>The AI Workflows I Actually Use to Run 3 Businesses</h4>
+              <h4>How I Built a 400-Person Community From Zero</h4>
               <span>Coming soon on YouTube</span>
             </div>
           </div>
@@ -959,64 +342,13 @@
               </div>
             </div>
             <div class="video-info">
-              <h4>What It's Really Like Running Businesses as a Queer Entrepreneur</h4>
+              <h4>The AI Workflows I Actually Use — Not the Hype, the Reality</h4>
               <span>Coming soon on YouTube</span>
             </div>
           </div>
         </a>
 
       </div>
-    </div>
-  </div>
-
-  <!-- COHORT PROGRAM -->
-  <div class="cohort-section" id="cohort">
-    <div class="cohort-inner">
-
-      <div class="cohort-modules">
-        <div class="cohort-module">
-          <span class="module-num">01</span>
-          <div class="module-body">
-            <strong>Business Launch &amp; Growth</strong>
-            <span>How to validate, start, and grow a business as a solo operator — the frameworks that actually translate to revenue.</span>
-          </div>
-        </div>
-        <div class="cohort-module">
-          <span class="module-num">02</span>
-          <div class="module-body">
-            <strong>Operations for Solo Operators</strong>
-            <span>Running a business without a team. Workflows, AI systems, the infrastructure that keeps you moving without burning out.</span>
-          </div>
-        </div>
-        <div class="cohort-module">
-          <span class="module-num">03</span>
-          <div class="module-body">
-            <strong>Accountability &amp; Peer Learning</strong>
-            <span>Weekly group sessions, real feedback, and a cohort of people who are building at the same time as you.</span>
-          </div>
-        </div>
-        <div class="cohort-module">
-          <span class="module-num">04</span>
-          <div class="module-body">
-            <strong>Direct Access to Anh</strong>
-            <span>Not pre-recorded content. Live sessions, real conversations, direct feedback on your specific situation.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="cohort-header">
-        <span class="section-label">The Cohort Program</span>
-        <h2 class="cohort-heading">6 weeks. Small group.<br><em>Real accountability.</em></h2>
-        <p class="cohort-sub">The cohort is the fastest way into The Phan Club — and the deepest. It's a structured 6-week program for queer entrepreneurs and allies who are ready to stop spinning and start building with intention.</p>
-        <p class="cohort-sub">You'll work through business building frameworks, operations, and the systems that let you actually run a business without burning out — alongside 10–15 other people who get it, because they're living it too.</p>
-        <div class="cohort-stats">
-          <div class="cohort-stat"><span class="cohort-stat-num">6</span><span class="cohort-stat-label">Weeks</span></div>
-          <div class="cohort-stat"><span class="cohort-stat-num">10</span><span class="cohort-stat-label">Business Owners</span></div>
-          <div class="cohort-stat"><span class="cohort-stat-num">2 hr</span><span class="cohort-stat-label">Live Sessions</span></div>
-        </div>
-        <a href="https://community.mranhphan.com/invitation?code=55FC2F" target="_blank" class="cohort-apply">Apply to a Cohort →</a>
-      </div>
-
     </div>
   </div>
 
