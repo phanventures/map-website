@@ -5,7 +5,8 @@ html { scroll-behavior: smooth; }
   /* ── Primary — Orange Red ── */
   --fire-tint:   #F9D5C8;
   --fire-light:  #F4A989;
-  --accent:      #E04E1F;  /* Fire — primary accent */
+  --accent:      #B84019;  /* Fire — primary accent. Darkened from #E04E1F,
+                             which was 3.71:1 as text and 3.98:1 behind white. */
   --fire-dark:   #B03A12;
   /* ── Secondary — Deep Navy ── */
   --navy-tint:   #D0D9EA;
@@ -371,7 +372,7 @@ body { padding-top: 70px; }
   font-size: 13px;
   font-weight: 700;
   color: var(--accent);
-  border-bottom: 1px solid rgba(224, 78, 31, 0.3);
+  border-bottom: 1px solid rgba(184, 64, 25, 0.3);
   padding-bottom: 2px;
   width: fit-content;
   transition: opacity 0.2s;
