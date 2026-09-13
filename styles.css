@@ -18,7 +18,9 @@ html { scroll-behavior: smooth; }
   --text:        #111110;  /* Ink */
   --charcoal:    #2A2928;
   --text-muted:  #6B6860;  /* Dusk */
-  --text-light:  #9C9890;  /* Fog */
+  --text-light:  #726E66;  /* Fog. Darkened from #9C9890, which was 2.68:1 on
+                             the canvas and 2.87:1 on white. Still lighter than
+                             --text-muted, so the tonal steps survive. */
   --border:      #E4E1D8;  /* Parchment */
   --linen:       #F0EDE5;
   --bg:          #F8F7F3;  /* Canvas */
@@ -409,7 +411,7 @@ body { padding-top: 70px; }
   flex-shrink: 0;
 }
 
-.pillar h3 {
+.pillar h2 {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 800;
@@ -631,4 +633,34 @@ footer { border-top: 1px solid var(--border); padding: 32px 48px; }
     border-bottom: 1px solid var(--border);
   }
   .nav-links .nav-link:last-child { border-bottom: none; }
+}
+
+/* Accessibility: skip link and focus visibility.
+   The skip link is the first tab stop and is offscreen until focused.
+   White on --navy is 14.22:1. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  background: var(--navy);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+}
+main:focus { outline: none; }
+
+/* .nav-toggle is a 0x0 opacity:0 checkbox, so its own focus ring has nothing
+   to draw on. Put the ring on the visible burger instead. */
+.nav-toggle:focus-visible + .nav-burger {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
