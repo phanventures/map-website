@@ -135,7 +135,7 @@
         <div class="hero-eyebrow">Direction &nbsp;·&nbsp; Systems &nbsp;·&nbsp; Technology</div>
         <h1 class="hero-belief">Stop drifting.<br><em>Start building.</em></h1>
         <p class="hero-sub">A direction worth working toward, systems that carry you on the days you're not feeling it, and technology that runs them so you don't have to. You don't need a new system. You need the one you already have to stop depending on you. It's how I run three businesses around a full-time job.</p>
-        <a href="#system" class="hero-cta">Start with the free guide →</a>
+        <a href="#offerings" class="hero-cta">See how we can work together →</a>
       </div>
       <div class="hero-photo">
         <img src="images/happyanh.jpg" alt="Anh Phan at a Minnesota Dodgeball event">
@@ -164,19 +164,20 @@
     </div>
   </div>
 
-  <!-- LEAD MAGNET -->
-  <div class="lead-section" id="system">
-    <div class="lead-inner">
-      <span class="section-label">Free Guide</span>
-      <h2>Start with a direction, not a to-do list.</h2>
-      <p class="lead-sub">The one-page process I use to name what I'm building, put systems underneath it, point technology at the parts that shouldn't need me, and check whether I'm actually getting closer. It's what I run every quarter. No 47-step framework. Just what I actually use.</p>
-      <form class="lead-form" action="#" method="post">
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <button type="submit">Send me the guide →</button>
-      </form>
-      <p class="lead-note">Free. No spam. Unsubscribe any time.</p>
-    </div>
-  </div>
+  <!-- LEAD MAGNET — REMOVED 2026-09-20 (security audit).
+       The form here posted to action="#" with no JS handler, so on GitHub Pages
+       every address submitted was silently discarded, under copy promising
+       "Free. No spam. Unsubscribe any time." Worse, the guide it offered was
+       never written: no PDF, no draft, nothing in the repo.
+
+       Wiring it to VBOUT would have collected real addresses for something that
+       cannot be sent. Same rule as never shipping a live Buy button before the
+       product is deliverable.
+
+       To bring it back once the guide exists: restore this block with a real
+       VBOUT form action, and repoint the hero CTA above and start-here.html's
+       interim CTA back at #system. The .lead-* CSS is left in styles.css for
+       exactly that. -->
 
   <!-- OFFERINGS PREVIEW -->
   <div class="preview-section" id="offerings">
